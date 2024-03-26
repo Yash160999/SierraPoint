@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SierraPoint v1.0</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 600px;
+        }
+        h1, h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        label {
+            margin-right: 10px;
+            font-weight: bold;
+            flex: 0 0 auto;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            flex: 1 1 auto;
+        }
+        span {
+            color: #666;
+            flex: 0 0 auto;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            align-self: center;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SierraPoint v1.0</h1>
+        <div class="content">
+            <!-- Load section -->
+            <h2>Loads:</h2>
+            <form action="/download" method="post">
+                <div class="form-group">
+                    <label for="windSpeed">1. Wind Speed:</label>
+                    <input type="text" id="windSpeed" name="windSpeed" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;mph</span>
+                </div>
+                <div class="form-group">
+                    <label for="exposure">2. Exposure:</label>
+                    <input type="text" id="exposure" name="exposure" pattern="[BbCcDd]" title="Please enter B, C, or D">
+                    <span>&nbsp;(B/C/D)</span>
+                </div>
+                <div class="form-group">
+                    <label for="roofLiveLoad">3. Roof Live Load:</label>
+                    <input type="text" id="roofLiveLoad" name="roofLiveLoad" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;psf</span>
+                </div>
+                <div class="form-group">
+                    <label for="roofSnowLoad">4. Roof Snow Load:</label>
+                    <input type="text" id="roofSnowLoad" name="roofSnowLoad" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;psf</span>
+                </div>
+                
+                <!-- Geometry section -->
+                <h2>Geometry:</h2>
+                <div class="form-group">
+                    <label for="eeveHeight">1. Eeve height:</label>
+                    <input type="text" id="eeveHeight" name="eeveHeight" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;ft</span>
+                </div>
+                <div class="form-group">
+                    <label for="ridgeHeight">2. Ridge height:</label>
+                    <input type="text" id="ridgeHeight" name="ridgeHeight" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;ft</span>
+                </div>
+                <div class="form-group">
+                    <label for="baySpacing">3. Bay spacing:</label>
+                    <input type="text" id="baySpacing" name="baySpacing" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;ft</span>
+                </div>
+                <div class="form-group">
+                    <label for="purlinSpacing">4. Purlin spacing:</label>
+                    <input type="text" id="purlinSpacing" name="purlinSpacing" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;ft</span>
+                </div>
+                <div class="form-group">
+                    <label for="buildingWidth">5. Width of building:</label>
+                    <input type="text" id="buildingWidth" name="buildingWidth" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;ft</span>
+                </div>
+                <div class="form-group">
+                    <label for="buildingLength">6. Length of building:</label>
+                    <input type="text" id="buildingLength" name="buildingLength" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;ft</span>
+                </div>
+                <div class="form-group">
+                    <label for="openingLocation">7. Opening location #1 from origin:</label>
+                    <input type="text" id="openingLocation" name="openingLocation" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a float value">
+                    <span>&nbsp;ft</span>
+                </div>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
